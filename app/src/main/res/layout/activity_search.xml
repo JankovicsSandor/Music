@@ -1,22 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/holo_orange_light"
     android:orientation="vertical"
     tools:context="com.example.sanyi.music_player_app.Search">
 
-   <TextView
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:text="@string/search"/>
-   <EditText
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:hint="@string/searchHint"/>
-   <TextView
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="@string/detailSearch"/>
+    <TextView
+        android:id="@+id/textView"
+        style="@style/searchActivity"
+        android:text="@string/searchLabel"
+        android:textSize="24sp" />
+
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:queryHint="@string/searchHint" />
+
+    <TextView
+        style="@style/searchActivity"
+        android:text="@string/detailSearch" />
+
+    <Button
+        android:id="@+id/searchButtonID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/gotoItem" />
 </LinearLayout>

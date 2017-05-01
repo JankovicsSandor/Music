@@ -9,19 +9,20 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 public class Now_playing extends AppCompatActivity {
-    private MediaPlayer mMediaPlayer;
-    private AudioManager mAudiomanger;
+    // Inicializing the mediaplayers and audio managers
+    private MediaPlayer actualMediaPlayer;
+    private AudioManager actualAudiomanger;
     AudioManager.OnAudioFocusChangeListener mOnAudioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() {
         @Override
         public void onAudioFocusChange(int focusChange) {
             if(focusChange==AudioManager.AUDIOFOCUS_LOSS_TRANSIENT || focusChange== AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK){
-                mMediaPlayer.pause();
+                actualMediaPlayer.pause();
             }
             else if(focusChange== AudioManager.AUDIOFOCUS_LOSS){
                 releaseMediaPlayer();
             }
             else if(focusChange== AudioManager.AUDIOFOCUS_GAIN){
-                mMediaPlayer.start();
+                actualMediaPlayer.start();
             }
         }
     };
@@ -31,7 +32,7 @@ public class Now_playing extends AppCompatActivity {
             releaseMediaPlayer();
         }
     };
-
+    // adding Onclick listeners to the play/ reset/ etc buttons
    private View.OnClickListener onClickListener= new View.OnClickListener() {
        @Override
        public void onClick(View v) {
@@ -48,11 +49,11 @@ public class Now_playing extends AppCompatActivity {
                case R.id.playId:{
                    ShowToast(getString(R.string.playPressed));
                    releaseMediaPlayer();
-                   int result =mAudiomanger.requestAudioFocus(mOnAudioFocusChangeListener,AudioManager.STREAM_MUSIC,AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
+                   int result = actualAudiomanger.requestAudioFocus(mOnAudioFocusChangeListener, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
                    if(result==AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
-                       mMediaPlayer = MediaPlayer.create(Now_playing.this, R.raw.song_2);
-                       mMediaPlayer.start();
-                       mMediaPlayer.setOnCompletionListener(mComplitionListener);
+                       actualMediaPlayer = MediaPlayer.create(Now_playing.this, R.raw.song_2);
+                       actualMediaPlayer.start();
+                       actualMediaPlayer.setOnCompletionListener(mComplitionListener);
                        break;
                    }
                }
@@ -67,13 +68,15 @@ public class Now_playing extends AppCompatActivity {
            }
        }
    };
+
+    // Writing a method to display a toast method so we can avoid code peretions
     private void ShowToast(String text){
         Toast.makeText(this,text,Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        mAudiomanger=(AudioManager) getSystemService(AUDIO_SERVICE);
+        actualAudiomanger = (AudioManager) getSystemService(AUDIO_SERVICE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_now_playing);
         ImageView random =(ImageView) findViewById(R.id.randomId);
@@ -90,16 +93,16 @@ public class Now_playing extends AppCompatActivity {
     }
        private void releaseMediaPlayer() {
            // If the media player is not null, then it may be currently playing a sound.
-           if (mMediaPlayer != null) {
+           if (actualMediaPlayer != null) {
                // Regardless of the current state of the media player, release its resources
                // because we no longer need it.
-               mMediaPlayer.release();
+               actualMediaPlayer.release();
 
                // Set the media player back to null. For our code, we've decided that
                // setting the media player to null is an easy way to tell that the media player
                // is not configured to play an audio file at the moment.
-               mMediaPlayer = null;
-               mAudiomanger.abandonAudioFocus(mOnAudioFocusChangeListener);
+               actualMediaPlayer = null;
+               actualAudiomanger.abandonAudioFocus(mOnAudioFocusChangeListener);
            }
        }
 }

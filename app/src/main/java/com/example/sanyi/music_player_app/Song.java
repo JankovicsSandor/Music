@@ -1,17 +1,23 @@
 package com.example.sanyi.music_player_app;
 
-/**
- * Created by Sanyi on 30/04/2017.
- */
 
 public class Song {
+    // Song class stores the details about songs
     private String name;
     private String author;
     private String album;
     private int song;
     private int image;
-    private double price;
+    private double price = 0;
 
+    // Overlaoded constructor because if we are in the shop we need its price but if we are in the storage or somewhere else we dont need the price
+    public Song(int newImage, String newName, String newAuthor, String newAlbum, int newSong) {
+        image = newImage;
+        name = newName;
+        author = newAuthor;
+        album = newAlbum;
+        song = newSong;
+    }
 
     public Song(int newImage, String  newName, String newAuthor, String newAlbum, int newSong,double newPrice){
         image= newImage;

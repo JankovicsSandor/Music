@@ -1,9 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
     tools:context="com.example.sanyi.music_player_app.Detail">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:id="@+id/authorPictureDetail"
+        style="@style/ImageViewDetail"
+        android:src="@drawable/ic_face_white_24dp" />
+
+    <TextView
+        android:id="@+id/titleTextView"
+        style="@style/TitleTextViewDetail"
+        android:text="@string/DetailAuthorName" />
+
+    <TextView
+        android:id="@+id/detailArtistId"
+        style="@style/ArtistTextViewDetail"
+        android:text="@string/authorDetail" />
+
+    <Button
+        android:id="@+id/goToShopDetail"
+        style="@style/buttonDetail"
+        android:layout_below="@id/authorPictureDetail"
+        android:text="@string/gotoShop" />
+
+    <Button
+        android:id="@+id/goToLibraryDetail"
+        style="@style/buttonDetail"
+        android:layout_below="@id/authorPictureDetail"
+        android:layout_toRightOf="@id/goToShopDetail"
+        android:text="@string/gotoItem" />
+
+    <ListView
+        android:id="@+id/DetailList"
+        style="@style/listViewDetail"></ListView>
+</RelativeLayout>

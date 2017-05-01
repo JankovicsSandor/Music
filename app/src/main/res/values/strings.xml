@@ -4,13 +4,11 @@
     <string name="nameHolder">Name</string>
     <string name="dollar">$</string>
     <string name="thanks">Thanks for shopping</string>
-    <string name="artistButton">Playlist</string>
     <string name="artistLabel">Play List</string>
     <string name="detailLabel">Detail</string>
     <string name="searchLabel">Search</string>
     <string name="storeLabel">Store</string>
     <string name="nowPlayingLabel">Now Playing</string>
-    <string name="search">Search</string>
     <string name="searchHint">Song title, album, year, etc.</string>
     <string name="nowPlayingTitle">Little Beast</string>
     <string name="nowPlayingAlbum">Gang Beazt</string>
@@ -19,15 +17,17 @@
     <string name="pressedPrev">You have pressed previous button</string>
     <string name="playPressed">You have pressed play button</string>
     <string name="skipPressed">You have pressed skip button</string>
-    <string name="resetWhole">You have pressed continous play</string>
+    <string name="resetWhole">You have pressed continuous play</string>
     <string name="detail">This activity contains a playing screen from where we can play a certain song.</string>
-    <string name="detailSearch">This activity is the seach activity from where the user can search for a song/album/etc. This could be implemented with the help of
+    <string name="detailSearch">This activity is the serach activity from where the user can search for a song/album/etc. This could be implemented with the help of
         Text Change Listener. This could sort the playlist according to the condition</string>
     <string name="detailStore">This activity holds the details of the songs which can be bought in the app store. The buy method could be implemented through google pay
     so users can pay in the play store so we dont have to implement our own banking interface</string>
-    <string name="gotoItem">Goto music library</string>
-    <string name="gotoShop">Go to shop</string>
-    <string name="playListDetail">This activity list out the songs from the songs list. This functionality could be improved if the app automatically seaches
+    <string name="gotoItem">Music Library</string>
+    <string name="gotoShop">Shop</string>
+    <string name="playListDetail">This activity list out the songs from the songs list. This functionality could be improved if the app automatically searches
         for the songs on the phone but it would require reading permissions </string>
-
+    <string name="authorDetail">In this activity the user can see some facts/informations about a certain author which could be selected from its phone. This could be implmented in such a way that it reads the song author out from the phone
+     and search programatically some infos on the web from wikipedia or somewhere else.</string>
+    <string name="DetailAuthorName">Little Bezzii</string>
 </resources>

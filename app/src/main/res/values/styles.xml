@@ -37,4 +37,77 @@
         <item name="android:layout_height">24dp</item>
         <item name="android:layout_margin">5dp</item>
     </style>
+
+    <style name="listViewDetail">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text</item>
+        <item name="android:layout_below">@id/goToShopDetail</item>
+    </style>
+
+    <style name="ImageViewDetail">
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_margin">10dp</item>
+    </style>
+
+    <style name="TextViewDetail">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">15dp</item>
+        <item name="android:textColor">@color/text</item>
+    </style>
+
+    <style name="buttonDetail">
+        <item name="android:layout_width">@dimen/buttonWidth</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">5dp</item>
+    </style>
+
+    <style name="TitleTextViewDetail">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_toEndOf">@id/authorPictureDetail</item>
+        <item name="android:layout_toRightOf">@id/authorPictureDetail</item>
+        <item name="android:textColor">@color/text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_margin">10dp</item>
+    </style>
+
+    <style name="ArtistTextViewDetail">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:isScrollContainer">true</item>
+        <item name="android:maxLines">3</item>
+        <item name="android:scrollbars">horizontal</item>
+        <item name="android:layout_toRightOf">@id/authorPictureDetail</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:layout_below">@id/titleTextView</item>
+        <item name="android:layout_alignBottom">@id/authorPictureDetail</item>
+    </style>
+
+    <style name="mainButtons">
+        <item name="android:layout_width">@dimen/buttonWidth</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">15dp</item>
+    </style>
+
+    <style name="searchActivity">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="nowPlayingLinear">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_alignParentStart">true</item>
+        <item name="android:background">@color/backg</item>
+    </style>
 </resources>

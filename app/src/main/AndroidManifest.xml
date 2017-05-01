@@ -16,11 +16,31 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ListArtist"  android:parentActivityName=".MainActivity" android:label="@string/artistLabel"/>
-        <activity android:name=".Detail"   android:parentActivityName=".MainActivity" android:label="@string/detailLabel"/>
-        <activity android:name=".Store"  android:parentActivityName=".MainActivity" android:label="@string/storeLabel"/>
-        <activity android:name=".Search" android:parentActivityName=".MainActivity" android:label="@string/searchLabel"/>
-        <activity android:name=".Now_playing"  android:parentActivityName=".MainActivity" android:label="@string/nowPlayingLabel"/>
+        <activity
+            android:name=".ListArtist"
+            android:label="@string/artistLabel"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Detail"
+            android:label="@string/detailLabel"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Store"
+            android:label="@string/storeLabel"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Search"
+            android:label="@string/searchLabel"
+            android:parentActivityName=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Now_playing"
+            android:label="@string/nowPlayingLabel"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>

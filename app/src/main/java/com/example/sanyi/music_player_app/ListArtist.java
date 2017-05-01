@@ -58,14 +58,14 @@ public class ListArtist extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        setContentView(R.layout.activity_artists);
+        // setting songlist what we have in the inventory
         final ArrayList<Song> shopSongs = new ArrayList<>();
-        shopSongs.add(new Song(R.drawable.ic_audiotrack_black_24dp, "Track_1", "Author_1", "Album_1", R.raw.song_1, 5.25));
-        shopSongs.add(new Song(R.drawable.ic_assistant_photo_black_24dp, "Track_2", "Author_2", "Album_2", R.raw.song_2, 2.6));
-        shopSongs.add(new Song(R.drawable.ic_child_care_black_24dp, "Track_3", "Author_3", "Album_3", R.raw.song_3, 10.8));
-        shopSongs.add(new Song(R.drawable.ic_pie_chart_black_24dp, "Track_4", "Author_4", "Album_4", R.raw.song_4, 1.8));
-        shopSongs.add(new Song(R.drawable.ic_insert_emoticon_black_24dp, "Track_5", "Author_5", "Album_5", R.raw.song_5, 0.50));
-
+        shopSongs.add(new Song(R.drawable.ic_audiotrack_black_24dp, "Track_1", "Author_1", "Album_1", R.raw.song_1));
+        shopSongs.add(new Song(R.drawable.ic_assistant_black_24dp, "Track_2", "Author_2", "Album_2", R.raw.song_2));
+        shopSongs.add(new Song(R.drawable.ic_child_care_black_24dp, "Track_3", "Author_3", "Album_3", R.raw.song_3));
+        shopSongs.add(new Song(R.drawable.ic_pie_chart_black_24dp, "Track_4", "Author_4", "Album_4", R.raw.song_4));
+        shopSongs.add(new Song(R.drawable.ic_insert_emoticon_black_24dp, "Track_5", "Author_5", "Album_5", R.raw.song_5));
+        // Setting adapter
         SongAdapter songAdapter = new SongAdapter(this, shopSongs, false);
         ListView listView = (ListView) findViewById(R.id.listViewArtist);
         listView.setAdapter(songAdapter);
@@ -75,7 +75,7 @@ public class ListArtist extends AppCompatActivity {
                 Song song = shopSongs.get(position);
                 releaseMedia();
                 int state = audioManager.requestAudioFocus(onAudioFocusChangeListener, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
-                if (state == audioManager.AUDIOFOCUS_REQUEST_GRANTED) {
+                if (state == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
                     mediaPlayer = MediaPlayer.create(ListArtist.this, song.getSong());
                     mediaPlayer.start();
                     mediaPlayer.setOnCompletionListener(completeListener);

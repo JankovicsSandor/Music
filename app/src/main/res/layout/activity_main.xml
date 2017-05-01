@@ -1,32 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@android:color/holo_orange_dark"
+    android:gravity="center"
     tools:context="com.example.sanyi.music_player_app.MainActivity">
 
-    <Button
-        android:id="@+id/shopId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Shop" />
-    <Button
-        android:id="@+id/artistId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/artistButton" />
-    <Button
-        android:id="@+id/detailId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Detail"
-        />
-    <Button
-        android:id="@+id/nowPlayingId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Now PLaying"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
 
-</LinearLayout>
+        <Button
+            android:id="@+id/shopId"
+            style="@style/mainButtons"
+            android:text="@string/storeLabel" />
+
+        <Button
+            android:id="@+id/artistId"
+            style="@style/mainButtons"
+            android:text="@string/artistLabel" />
+
+        <Button
+            android:id="@+id/detailId"
+            style="@style/mainButtons"
+            android:text="@string/detailLabel" />
+
+        <Button
+            android:id="@+id/nowPlayingId"
+            style="@style/mainButtons"
+            android:text="@string/nowPlayingLabel" />
+
+        <Button
+            android:id="@+id/searchId"
+            style="@style/mainButtons"
+            android:text="@string/searchLabel" />
+    </LinearLayout>
+
+</ScrollView>
